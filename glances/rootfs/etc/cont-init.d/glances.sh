@@ -35,3 +35,21 @@ if bashio::config.true 'influxdb.enabled'; then
         echo "protocol=${protocol}"
     } >> /etc/glances.conf
 fi
+
+# Export Glances data to InfluxDB2
+if bashio::config.true 'influxdb2.enabled'; then
+    protocol='http'
+    if bashio::config.true 'influxdb2.ssl'; then
+    protocol='https'
+    fi
+    # Modify the configuration
+    {
+        echo "[influxdb2]"
+        echo "host=$(bashio::config 'influxdb2.host')"
+        echo "port=$(bashio::config 'influxdb2.port')"
+        echo "token=$(bashio::config 'influxdb2.token')"
+        echo "organization=$(bashio::config 'influxdb2.organization')"
+        echo "bucket=$(bashio::config 'influxdb2.bucket')"
+        echo "protocol=${protocol}"
+    } >> /etc/glances.conf
+fi

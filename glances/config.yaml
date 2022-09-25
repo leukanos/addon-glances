@@ -50,6 +50,14 @@ options:
     database: glances
     prefix: localhost
     interval: 60
+  influxdb2:
+    enabled: false
+    host: a0d7b954-influxdb
+    port: 8086
+    token: ""
+    organization: ""
+    bucket: ""
+    interval: 60
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
   process_info: bool
