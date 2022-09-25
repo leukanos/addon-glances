@@ -75,6 +75,15 @@ schema:
     prefix: str
     interval: int
     ssl: bool?
+  influxdb2:
+    enabled: bool
+    host: str
+    port: port
+    token: str
+    organization: password
+    bucket: str
+    interval: int
+    ssl: bool?
   leave_front_door_open: bool?
 environment:
   LOG_FORMAT: "{LEVEL}: {MESSAGE}"
