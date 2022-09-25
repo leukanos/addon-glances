@@ -20,5 +20,8 @@
 # InfluxDB export
 /etc/services.d/influxdb/run &
 
+# InfluxDB export
+/etc/services.d/influxdb2/run &
+
 # Start Glances
 exec /etc/services.d/glances/run
