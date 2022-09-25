@@ -48,7 +48,7 @@ if bashio::config.true 'influxdb2.enabled'; then
         echo "host=$(bashio::config 'influxdb2.host')"
         echo "port=$(bashio::config 'influxdb2.port')"
         echo "token=$(bashio::config 'influxdb2.token')"
-        echo "organization=$(bashio::config 'influxdb2.organization')"
+        echo "org=$(bashio::config 'influxdb2.organization')"
         echo "bucket=$(bashio::config 'influxdb2.bucket')"
         echo "protocol=${protocol}"
     } >> /etc/glances.conf
